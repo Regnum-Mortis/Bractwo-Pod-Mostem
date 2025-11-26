@@ -1,0 +1,18 @@
+{
+  "residential": [
+	{"id": "bread", "weight": 6},
+	{"id": "junk",  "weight": 25},
+	{"id": "knife", "weight": 1},
+	{"id": "beer", "weight": 10},
+	{"id": "chips", "weight": 12},
+	{"id": "spoon", "weight": 8},
+	{"id": "waste", "weight": 19}
+	
+  ],
+  "industrial": [
+	{"id": "bread", "weight": 1},
+	{"id": "junk",  "weight": 30},
+	{"id": "knife", "weight": 3},
+	{"id": "waste", "weight": 25}
+  ]
+}

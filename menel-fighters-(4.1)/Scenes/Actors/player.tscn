@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl22i0rmu3guf"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_7w11g"]
+[ext_resource type="Texture2D" uid="uid://cybjd4y3bfnjk" path="res://Art/postac.png" id="2_v2ckw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qq6ry"]
+size = Vector2(27, 26)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 4
+script = ExtResource("1_7w11g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v2ckw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 7)
+shape = SubResource("RectangleShape2D_qq6ry")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_speed = 8.0
+
+[node name="HungerTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]

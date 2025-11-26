@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1jjbngld2s2i"]
+
+[ext_resource type="Script" path="res://Scripts/TrashCan.gd" id="1_gyd5w"]
+[ext_resource type="Texture2D" uid="uid://cgke3ihqa8agl" path="res://Art/smietnik.png" id="1_y18wh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx5lw"]
+size = Vector2(49, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7c533"]
+size = Vector2(35, 11)
+
+[node name="TrashCan" type="Area2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_gyd5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y18wh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_qx5lw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 16.5)
+shape = SubResource("RectangleShape2D_7c533")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

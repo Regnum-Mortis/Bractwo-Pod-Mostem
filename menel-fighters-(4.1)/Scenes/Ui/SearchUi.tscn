@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://buoyoquk2poy1"]
+
+[node name="SearchUI" type="CanvasLayer"]
+
+[node name="searchbar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(300, 25)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 20.0
+offset_right = 150.0
+offset_bottom = 47.0
+grow_horizontal = 2
