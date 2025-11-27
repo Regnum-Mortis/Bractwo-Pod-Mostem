@@ -41,10 +41,4 @@
 		"type": "junk",
 		"price":0
 	},
-	{
-		"id": "zomo-stick",
-		"name": "pałka ZOMO",
-		"type": "tool",
-		"durability": null
-	}
 ]

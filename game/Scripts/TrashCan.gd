@@ -1,20 +1,20 @@
 extends Area2D
 
-var rng: RandomNumberGenerator = RandomNumberGenerator.new()
-var trash_random: RandomNumberGenerator = RandomNumberGenerator.new()
-var player_in_range: bool = false
-@onready var search_ui: Node = get_node("../UI_Player/SearchUI")
-@onready var bar: Node = search_ui.get_node("searchbar")
-@onready var choice_ui: Node = get_node("../UI_Player/ChoiceUI")
+var rng = RandomNumberGenerator.new()
+var trash_random = RandomNumberGenerator.new()
+var player_in_range = false
+@onready var search_ui = get_node("../UI_Player/SearchUI")
+@onready var bar = search_ui.get_node("searchbar")
+@onready var choice_ui = get_node("../UI_Player/ChoiceUI")
 
-@export var district: String = "residential"  
+@export var district = "residential"  
 
-var items = {}           # accept any parsed JSON (Array or Dictionary)
+var items = {}           
 var loot_pools = {}     
 
-var wait_time: float = 12.0
-var progress: float = 0.0
-var search_locked: bool = false
+var wait_time = 12.0
+var progress = 0.0
+var search_locked = false
 
 
 func _process(delta):
@@ -29,10 +29,10 @@ func _process(delta):
 					progress = 100.0
 					search_locked = true
 					
-					var roll: int = rng.randi_range(1,10)
+					var roll = rng.randi_range(1,10)
 					if roll > 4:
 						var pool = loot_pools.get(district, [])
-						var options: Array = pick_unique_weight(pool, 3)
+						var options = pick_unique_weight(pool, 3)
 						if choice_ui:
 							choice_ui.show_options(options, items)
 						print("Propozycje z ", district, ":", options)
@@ -77,20 +77,11 @@ func _reset_search_ui():
 		
 		
 func load_json(path):
-	var file: FileAccess = FileAccess.open(path, FileAccess.READ)
+	var file = FileAccess.open(path, FileAccess.READ)
 	if not file: 
 		return {}
-	var text = file.get_as_text()
-	var parsed = JSON.parse_string(text)
-
-	if typeof(parsed) == TYPE_DICTIONARY and parsed.has("error"):
-		if parsed.error != OK:
-			printerr("Failed to parse JSON: %s" % parsed.error_string)
-			return {}
-		return parsed.result
-	# parsed is already the result (Array or Dictionary)
-	return parsed
-
+	return JSON.parse_string(file.get_as_text())
+	
 	
 	
 #o tym nie rozmawiamy ( ochujtuzapierdala )
@@ -100,25 +91,25 @@ func _ready():
 	items = load_json("res://Data/items.json")
 	loot_pools = load_json("res://Data/loot_pools.json")
 	if typeof(items) == TYPE_ARRAY:
-		var d: Dictionary = {}
+		var d = {}
 		for e in items:
 			if e.has("id"):
 				d[e.id] = e
 		items = d
-
+		
 	if choice_ui and not choice_ui.is_connected("chosen", Callable(self, "_on_choice_chosen")):
 		choice_ui.connect("chosen", Callable(self, "_on_choice_chosen"))
-
+	
 	print("items typeof:", typeof(items), " size:", items.size())
 	print("loot_pools typeof:", typeof(loot_pools), " keys:", loot_pools.keys())
 	
 	#funkcja losuje itemy z jsona i zwraca tablice.
-func pick_unique_weight(pool, count):
-	var bag: Array[Variant] = []
+func pick_unique_weight(pool: Array, count: int) -> Array:
+	var bag = []
 	for e in pool:
 		#e - entry || w - weight
-		var id: String = String(e.get("id",""))
-		var w: int = int(e.get("weight", 1))
+		var id = String(e.get("id",""))
+		var w = int(e.get("weight", 1))
 		if id == "" or w <= 0:
 			continue
 		for i in range(w):
@@ -138,6 +129,8 @@ func pick_unique_weight(pool, count):
 				
 	return result
 
-func _on_choice_chosen(id):
+func _on_choice_chosen(id: String):
 	var def = items.get(id, {})
 	print("Wybrałeś:", def.get("name", id))
+	
+	

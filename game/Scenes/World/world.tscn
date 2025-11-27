@@ -1,23 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://fqefwmsg3sti"]
+[gd_scene load_steps=11 format=3 uid="uid://fqefwmsg3sti"]
 
 [ext_resource type="Texture2D" uid="uid://vxw0oysn8tij" path="res://Art/TileSet_prototype.png" id="1_xwsac"]
 [ext_resource type="PackedScene" uid="uid://buoyoquk2poy1" path="res://Scenes/Ui/SearchUi.tscn" id="2_j18l1"]
 [ext_resource type="PackedScene" uid="uid://bl22i0rmu3guf" path="res://Scenes/Actors/player.tscn" id="3_dg2g4"]
 [ext_resource type="PackedScene" uid="uid://d1jjbngld2s2i" path="res://Scenes/World/Objects/TrashCan.tscn" id="3_rdljx"]
 [ext_resource type="PackedScene" uid="uid://b6xy2hbs0hb2c" path="res://Scenes/Ui/ChoiceUi.tscn" id="3_vvk83"]
+[ext_resource type="PackedScene" uid="uid://crios88m4i5w5" path="res://Scenes/Ui/DialogUi.tscn" id="4_adcqc"]
+[ext_resource type="Script" uid="uid://ufw422vmqhys" path="res://Scenes/Ui/DialogUI.gd" id="5_7staa"]
+[ext_resource type="PackedScene" uid="uid://prvnkp8swxfc" path="res://Scenes/Actors/npc.tscn" id="8_fcotr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7w8dl"]
 texture = ExtResource("1_xwsac")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
 2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSet" id="TileSet_4su36"]
@@ -63,8 +60,15 @@ visible = false
 
 [node name="ChoiceUI" parent="UI_Player" instance=ExtResource("3_vvk83")]
 
+[node name="DialogUI" parent="UI_Player" instance=ExtResource("4_adcqc")]
+script = ExtResource("5_7staa")
+
 [node name="TrashCan" parent="." instance=ExtResource("3_rdljx")]
 position = Vector2(-312, 70)
+
+[node name="npc" parent="." instance=ExtResource("8_fcotr")]
+position = Vector2(-310, -90)
+dialog_ui_path = NodePath("../UI_Player/DialogUI")
 
 [node name="Player" parent="." instance=ExtResource("3_dg2g4")]
 position = Vector2(-2, 12)

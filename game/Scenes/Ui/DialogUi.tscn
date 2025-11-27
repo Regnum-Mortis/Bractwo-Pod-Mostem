@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://crios88m4i5w5"]
+
+[ext_resource type="Texture2D" uid="uid://dy41g7tgpqx6a" path="res://Art/DialogWindow.png" id="1_rlgqx"]
+
+[sub_resource type="Theme" id="Theme_72fi4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rlgqx"]
+texture = ExtResource("1_rlgqx")
+
+[node name="DialogUI" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(360, 200)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_72fi4")
+theme_override_styles/panel = SubResource("StyleBoxTexture_rlgqx")
+
+[node name="Npc_name" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 35.0
+offset_right = 220.0
+offset_bottom = 85.0
+
+[node name="Npc_text" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 90.0
+offset_right = 820.0
+offset_bottom = 150.0
+scale = Vector2(1.5, 1.5)

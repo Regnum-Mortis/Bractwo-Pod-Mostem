@@ -1,20 +1,28 @@
 extends CharacterBody2D
 
-@export var speed: int = 300
-@export var health: int = 500
-@export var hunger: int = 100
-@onready var hunger_bar: Node = get_node("../UI_Player/HungerBar")
-@onready var health_bar: Node = get_node("../UI_Player/HealthBar")
+@export var speed = 300
+@export var health = 500
+@export var hunger = 300
+@export var can_move = true
+@onready var hunger_bar = get_node("../UI_Player/HungerBar")
+@onready var health_bar = get_node("../UI_Player/HealthBar")
 
 
 @export var inventory: Inventory
 
 func get_handle_input():
-	var input_direction: Vector2 = Input.get_vector("move_left", "move_right","move_up","move_down")
+	if not can_move:
+		velocity = Vector2.ZERO
+		return
+		
+	var input_direction = Input.get_vector("move_left", "move_right","move_up","move_down")
 	velocity = input_direction *speed
 func _physics_process(_delta):
-	get_handle_input()
-	move_and_slide()
+	if can_move:
+		get_handle_input()
+		move_and_slide()
+	else:
+		velocity = Vector2.ZERO
 	z_index = int(global_position.y)
 
 

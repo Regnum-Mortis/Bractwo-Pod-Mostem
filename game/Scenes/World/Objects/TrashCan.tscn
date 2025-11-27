@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1jjbngld2s2i"]
 
-[ext_resource type="Script" path="res://Scripts/TrashCan.gd" id="1_gyd5w"]
+[ext_resource type="Script" uid="uid://c81icrw0k0nth" path="res://Scripts/TrashCan.gd" id="1_gyd5w"]
 [ext_resource type="Texture2D" uid="uid://cgke3ihqa8agl" path="res://Art/smietnik.png" id="1_y18wh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qx5lw"]

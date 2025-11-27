@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://prvnkp8swxfc"]
+
+[ext_resource type="Texture2D" uid="uid://bt0qhyc1ccfmg" path="res://Art/npc.png" id="1_av4sb"]
+[ext_resource type="Script" uid="uid://bqm7cb37v6q3e" path="res://Scripts/npc.gd" id="1_ton8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc8am"]
+size = Vector2(24, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ton8e"]
+size = Vector2(74, 74)
+
+[node name="npc" type="Node2D"]
+script = ExtResource("1_ton8e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_av4sb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_sc8am")
+
+[node name="chat_detecion" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detecion"]
+shape = SubResource("RectangleShape2D_ton8e")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="chat_detecion" to="." method="_on_chat_detecion_body_entered"]
+[connection signal="body_exited" from="chat_detecion" to="." method="_on_chat_detecion_body_exited"]
