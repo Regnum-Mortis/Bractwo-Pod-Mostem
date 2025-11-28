@@ -1,10 +1,9 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://d1nlnninoxc1u"]
 
 [ext_resource type="Script" uid="uid://dvvhe74se253k" path="res://inventory/inventory_item.gd" id="1_t4rfn"]
-[ext_resource type="Texture2D" uid="uid://di2x3wv81pfsl" path="res://Art/bread-icon.png" id="2_er365"]
+[ext_resource type="Texture2D" uid="uid://begvbhg14kijf" path="res://Art/bariera.png" id="2_t4rfn"]
 
 [resource]
 script = ExtResource("1_t4rfn")
-name = "bread"
-texture = ExtResource("2_er365")
-metadata/_custom_type_script = "uid://ck0wnjbj6x0fw"
+name = "chips"
+texture = ExtResource("2_t4rfn")
