@@ -21,7 +21,7 @@ var dialog_ui
 func _ready() -> void:
 	dialog_ui = get_node(dialog_ui_path)
 func _process(_delta: float) -> void:
-	z_index = int(global_position.y)
+	#z_index = int(global_position.y)
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		if not talking:
 			start_dialog()

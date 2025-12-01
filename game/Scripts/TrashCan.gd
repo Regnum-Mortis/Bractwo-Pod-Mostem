@@ -18,7 +18,7 @@ var search_locked = false
 
 
 func _process(delta):
-	z_index = int(global_position.y)
+	#z_index = int(global_position.y)
 	if player_in_range:
 		if not search_locked:
 			if player_in_range == true && Input.is_action_pressed("interact"):
