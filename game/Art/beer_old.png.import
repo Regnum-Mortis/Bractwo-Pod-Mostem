@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c57i2ptxchx0r"
-path="res://.godot/imported/bread-icon.png-b6e7125e36bad0b7cc7bdddd8ab4f687.ctex"
+uid="uid://cqs67scxqnsc0"
+path="res://.godot/imported/beer_old.png-e3d62c7aa3d5e3c655a27cc01b371778.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/bread-icon.png"
-dest_files=["res://.godot/imported/bread-icon.png-b6e7125e36bad0b7cc7bdddd8ab4f687.ctex"]
+source_file="res://Art/beer_old.png"
+dest_files=["res://.godot/imported/beer_old.png-e3d62c7aa3d5e3c655a27cc01b371778.ctex"]
 
 [params]
 
