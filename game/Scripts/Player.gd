@@ -24,6 +24,10 @@ func _physics_process(_delta):
 	else:
 		velocity = Vector2.ZERO
 	#z_index = int(global_position.y)
+	
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("pause_menu") and scene_file_path!="res://menu/main_manu.tscn":
+		get_tree().change_scene_to_file("res://menu/main_manu.tscn")
 
 func _on_hunger_timer_timeout():
 	if hunger >0:
@@ -51,3 +55,4 @@ func collect(item):
 # When inventory is open we prevent movement; when closed we restore movement.
 func set_inventory_opened(opened: bool) -> void:
 		can_move = not opened
+		

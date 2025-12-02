@@ -42,8 +42,17 @@ script = ExtResource("1_erwcg")
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(360, 200)
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -100.0
+offset_right = 180.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_owlds")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
