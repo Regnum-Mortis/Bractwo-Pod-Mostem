@@ -10,8 +10,8 @@ extends CharacterBody2D
 
 @onready var cam: Camera2D = $Camera2D
 
-@export var zoom_normal := Vector2(1.8, 1.8)
-@export var zoom_sprint := Vector2(1.5, 1.5)   # im mniejsze, tym bliżej
+@export var zoom_normal := Vector2(1.85, 1.85)
+@export var zoom_sprint := Vector2(1.75, 1.75)   # im mniejsze, tym bliżej
 @export var zoom_speed := 8.0                    # szybkość 
 
 var sprinting = false
@@ -52,9 +52,7 @@ func _physics_process(_delta):
 	cam.zoom = cam.zoom.lerp(target_zoom, zoom_speed * _delta)
 	
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pause_menu") and scene_file_path!="res://menu/main_manu.tscn":
-		get_tree().change_scene_to_file("res://menu/main_menu.tscn")
-		
+		pass
 	
 
 func _on_hunger_timer_timeout():

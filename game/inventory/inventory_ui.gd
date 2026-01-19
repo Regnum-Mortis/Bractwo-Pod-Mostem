@@ -7,14 +7,6 @@ var inventory: Inventory = null
 var is_open: bool = false
 
 func _ready() -> void:
-	# prefer the player's inventory if this UI is a child of the player
-	var p := get_parent()
-	if p and p.get("inventory") != null:
-		inventory = p.get("inventory")
-	else:
-		inventory = preload("res://inventory/player_inventory.tres")
-
-	update_slots()
 	close()
 
 
@@ -40,10 +32,21 @@ func _process(_delta) -> void:
 			open()
 	
 func open() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	var p = _get_player_node()
+	if inventory == null:
+		if p and p.get("inventory") != null:
+			inventory = p.get("inventory")
+	
+	if inventory and inventory.has_signal("updated"):
+		if not inventory.updated.is_connected(update_slots):
+			inventory.updated.connect(update_slots)
+	
+	update_slots()
+	
 	is_open = true
 	visible = true
 	# notify player to block movement while inventory is open
-	var p = _get_player_node()
 	if p:
 		if p.has_method("set_inventory_opened"):
 			p.set_inventory_opened(true)
@@ -60,6 +63,10 @@ func close() -> void:
 	is_open = false
 	visible = false
 	# notify player to restore movement
+	
+	if inventory and inventory.updated.is_connected(update_slots):
+		inventory.updated.disconnect(update_slots)
+	
 	var p = _get_player_node()
 	if p:
 		if p.has_method("set_inventory_opened"):
@@ -69,6 +76,7 @@ func close() -> void:
 		else:
 			if p.has_method("set"):
 				p.set("can_move", true)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func _get_player_node() -> Node:

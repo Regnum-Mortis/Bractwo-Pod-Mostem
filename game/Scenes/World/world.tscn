@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://fqefwmsg3sti"]
+[gd_scene load_steps=15 format=4 uid="uid://fqefwmsg3sti"]
 
 [ext_resource type="Texture2D" uid="uid://bs2bd482fgfp" path="res://Art/TileSet_prototype.png" id="1_xwsac"]
 [ext_resource type="Texture2D" uid="uid://cs2e21xeom7vt" path="res://Art/TileSet_1.png" id="1_y0d6x"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bl22i0rmu3guf" path="res://Scenes/Actors/player.tscn" id="3_dg2g4"]
 [ext_resource type="PackedScene" uid="uid://d1jjbngld2s2i" path="res://Scenes/World/Objects/TrashCan.tscn" id="3_rdljx"]
 [ext_resource type="PackedScene" uid="uid://b6xy2hbs0hb2c" path="res://Scenes/Ui/ChoiceUi.tscn" id="3_vvk83"]
+[ext_resource type="PackedScene" uid="uid://ddsqbav6ysoc6" path="res://inventory/inventory_ui.tscn" id="4_0ph6x"]
 [ext_resource type="PackedScene" uid="uid://crios88m4i5w5" path="res://Scenes/Ui/DialogUi.tscn" id="4_adcqc"]
 [ext_resource type="Script" uid="uid://ufw422vmqhys" path="res://Scenes/Ui/DialogUI.gd" id="5_7staa"]
 [ext_resource type="PackedScene" uid="uid://c0d3p0qdvkowy" path="res://menu/pause_menu/pause_menu.tscn" id="7_ugf0j"]
@@ -93,6 +94,15 @@ y_sort_enabled = true
 
 [node name="UI_Player" type="CanvasLayer" parent="YSortLayer"]
 
+[node name="PauseMenu" parent="YSortLayer/UI_Player" node_paths=PackedStringArray("inventory_ui") instance=ExtResource("7_ugf0j")]
+inventory_ui = NodePath("../Inventory_UI")
+
+[node name="Inventory_UI" parent="YSortLayer/UI_Player" instance=ExtResource("4_0ph6x")]
+scale = Vector2(8, 8)
+pivot_offset = Vector2(64, 32)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
 [node name="HealthBar" type="ProgressBar" parent="YSortLayer/UI_Player"]
 modulate = Color(0, 1, 0, 1)
 offset_left = 16.0
@@ -120,8 +130,6 @@ visible = false
 
 [node name="DialogUI" parent="YSortLayer/UI_Player" instance=ExtResource("4_adcqc")]
 script = ExtResource("5_7staa")
-
-[node name="PauseMenu" parent="YSortLayer/UI_Player" instance=ExtResource("7_ugf0j")]
 
 [node name="TrashCan" parent="YSortLayer" instance=ExtResource("3_rdljx")]
 position = Vector2(-312, 70)

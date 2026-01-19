@@ -22,6 +22,7 @@ func _ready():
 func show_options(ids: Array, items: Dictionary):
 	_ids = ids.duplicate()
 	visible = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	option1.text = _get_label(0, items)
 	option2.text = _get_label(1, items)
@@ -39,6 +40,7 @@ func _on_option_pressed(index: int):
 		var chosen_id = _ids[index]
 		emit_signal("chosen", chosen_id)
 	visible = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	_ids.clear()
 
 func _process(_delta):

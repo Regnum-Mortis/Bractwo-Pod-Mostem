@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl22i0rmu3guf"]
+[gd_scene load_steps=5 format=3 uid="uid://bl22i0rmu3guf"]
 
 [ext_resource type="Script" uid="uid://j0eknq61j2ku" path="res://Scripts/Player.gd" id="1_mqoqv"]
 [ext_resource type="Resource" uid="uid://csd5dgnn2qenj" path="res://inventory/player_inventory.tres" id="2_87pht"]
 [ext_resource type="Texture2D" uid="uid://dy5xngofujkj5" path="res://Art/postac.png" id="2_v2ckw"]
-[ext_resource type="PackedScene" uid="uid://ddsqbav6ysoc6" path="res://inventory/inventory_ui.tscn" id="3_87pht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qq6ry"]
 size = Vector2(27, 26)
@@ -26,13 +25,5 @@ position_smoothing_speed = 8.0
 
 [node name="HungerTimer" type="Timer" parent="."]
 autostart = true
-
-[node name="Inventory_UI" parent="." instance=ExtResource("3_87pht")]
-visible = false
-offset_left = -256.0
-offset_top = -128.0
-offset_right = -128.0
-offset_bottom = -64.0
-scale = Vector2(4, 4)
 
 [connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
