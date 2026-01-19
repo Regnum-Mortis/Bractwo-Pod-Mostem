@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://tix4n2qbfwe2" path="res://Art/inventory_art/inventory_background.png" id="2_1mtac"]
 
 [node name="PauseMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,8 +45,24 @@ offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="ButtonResume" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Resume"
+
+[node name="ButtonMainMenu" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Main Menu"
+
+[node name="ButtonQuitGame" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonQuitGame" to="." method="_on_button_quit_game_pressed"]

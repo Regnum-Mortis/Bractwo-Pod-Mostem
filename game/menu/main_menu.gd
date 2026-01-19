@@ -7,6 +7,7 @@ extends Control
 @onready var options_menu = $OptionsMenu 
 
 func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	# Ensure options are hidden at start
 	options_menu.visible = false
 	
@@ -18,6 +19,7 @@ func _ready():
 	options_menu.close_options.connect(_on_options_closed)
 
 func _on_start_pressed():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 func _on_options_pressed():
