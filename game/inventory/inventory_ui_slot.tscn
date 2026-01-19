@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1v4qyhijbdr3"]
+[gd_scene load_steps=5 format=3 uid="uid://d1v4qyhijbdr3"]
 
 [ext_resource type="Script" uid="uid://cyhx43k3mavj" path="res://inventory/inventory_ui_slot.gd" id="1_uebyi"]
 [ext_resource type="Texture2D" uid="uid://dblighifhe0k3" path="res://Art/inventory_art/item_slot.png" id="2_uebyi"]
+[ext_resource type="Texture2D" uid="uid://10kq6w7f5oqr" path="res://Art/beer2.png" id="3_1ris8"]
 [ext_resource type="FontFile" uid="uid://bmkc5lpneuknr" path="res://Fonts/PressStart2P-Regular.ttf" id="3_fsjip"]
 
 [node name="inventory_ui_slot" type="Panel"]
@@ -25,7 +26,8 @@ offset_bottom = 16.0
 layout_mode = 2
 
 [node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_1ris8")
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]
 clip_contents = true
