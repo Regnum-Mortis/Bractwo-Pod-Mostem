@@ -68,7 +68,7 @@ You do not need to install Godot to play. You can download the latest playable b
 
 ## 📜 License
 
-© 2025 **Regnum Mortis Studios**. All rights reserved.
+© 2026 **Regnum Mortis Studios**. All rights reserved.
 Unauthorized copying, distribution, or use of the code and assets without the owner's written consent is strictly prohibited.
 
 ---
