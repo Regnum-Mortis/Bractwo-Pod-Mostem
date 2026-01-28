@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=21 format=3 uid="uid://csd5dgnn2qenj"]
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://csd5dgnn2qenj"]
 
 [ext_resource type="Script" uid="uid://j7jnigwttbr2" path="res://inventory/inventory.gd" id="2_fhgtu"]
 [ext_resource type="Script" uid="uid://bcaj2uf0ynf7b" path="res://inventory_slot.gd" id="2_ptr4k"]
