@@ -7,6 +7,8 @@
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_n4o47"]
 gradient = SubResource("Gradient_lak45")
+fill_from = Vector2(0.10280374, 0.8831776)
+fill_to = Vector2(0.90654206, 0.042056076)
 
 [node name="MainManu" type="Control"]
 layout_mode = 3
