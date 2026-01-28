@@ -7,3 +7,4 @@
 script = ExtResource("1_as65q")
 name = "beer"
 texture = ExtResource("2_as65q")
+consumable = true

@@ -2,7 +2,7 @@ extends Control
 
 var inventory: Inventory = null
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
-
+var active_slot_with_drop = null
 
 var is_open: bool = false
 
@@ -64,6 +64,9 @@ func close() -> void:
 	visible = false
 	# notify player to restore movement
 	
+	if active_slot_with_drop:
+		active_slot_with_drop.hide_drop_button()
+		active_slot_with_drop = null
 	if inventory and inventory.updated.is_connected(update_slots):
 		inventory.updated.disconnect(update_slots)
 	
@@ -84,3 +87,17 @@ func _get_player_node() -> Node:
 	if players.size() > 0:
 		return players[0]
 	return null
+
+func on_slot_clicked(clicked_slot):
+	print("funkcja on_slot_clicked")
+	if active_slot_with_drop!= null and active_slot_with_drop != clicked_slot:
+		active_slot_with_drop.hide_drop_button()
+		
+	if clicked_slot.check_visibility():
+		print("xd")
+		clicked_slot.hide_drop_button()
+		active_slot_with_drop = null
+	else:
+		print("wykonalo sie")
+		clicked_slot.show_drop_button()
+		active_slot_with_drop = clicked_slot

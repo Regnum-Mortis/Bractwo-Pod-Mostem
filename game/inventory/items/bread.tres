@@ -7,3 +7,4 @@
 script = ExtResource("1_bfv5h")
 name = "bread"
 texture = ExtResource("2_ciwwd")
+consumable = true
