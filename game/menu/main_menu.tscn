@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjxxrcwxxi54m"]
+[gd_scene format=3 uid="uid://bjxxrcwxxi54m"]
 
 [ext_resource type="Script" uid="uid://kee165voj0s1" path="res://menu/main_menu.gd" id="1_f5okj"]
 [ext_resource type="PackedScene" uid="uid://bq2mhbvft4cxx" path="res://menu/options_menu.tscn" id="2_o5w3e"]
@@ -10,7 +10,7 @@ gradient = SubResource("Gradient_lak45")
 fill_from = Vector2(0.10280374, 0.8831776)
 fill_to = Vector2(0.90654206, 0.042056076)
 
-[node name="MainManu" type="Control"]
+[node name="MainManu" type="Control" unique_id=741715997]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,7 +25,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_f5okj")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1497824617]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_n4o47")
 
-[node name="MainManuButtons" type="VBoxContainer" parent="."]
+[node name="MainManuButtons" type="VBoxContainer" parent="." unique_id=1957654775]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,19 +52,19 @@ offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StartButton" type="Button" parent="MainManuButtons"]
+[node name="StartButton" type="Button" parent="MainManuButtons" unique_id=960595810]
 layout_mode = 2
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="MainManuButtons"]
+[node name="OptionsButton" type="Button" parent="MainManuButtons" unique_id=874474772]
 layout_mode = 2
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="MainManuButtons"]
+[node name="QuitButton" type="Button" parent="MainManuButtons" unique_id=1958571419]
 layout_mode = 2
 text = "Quit"
 
-[node name="OptionsMenu" parent="." instance=ExtResource("2_o5w3e")]
+[node name="OptionsMenu" parent="." unique_id=905040266 instance=ExtResource("2_o5w3e")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0

@@ -1,37 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1v4qyhijbdr3"]
+[gd_scene format=3 uid="uid://d1v4qyhijbdr3"]
 
 [ext_resource type="Script" uid="uid://cyhx43k3mavj" path="res://inventory/inventory_ui_slot.gd" id="1_uebyi"]
 [ext_resource type="Texture2D" uid="uid://dblighifhe0k3" path="res://Art/inventory_art/item_slot.png" id="2_uebyi"]
 [ext_resource type="Texture2D" uid="uid://10kq6w7f5oqr" path="res://Art/beer2.png" id="3_1ris8"]
 [ext_resource type="FontFile" uid="uid://bmkc5lpneuknr" path="res://Fonts/PressStart2P-Regular.ttf" id="3_fsjip"]
 
-[node name="inventory_ui_slot" type="Panel"]
+[node name="inventory_ui_slot" type="Panel" unique_id=1079294789]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(16, 16)
 offset_right = 16.0
 offset_bottom = 16.0
 script = ExtResource("1_uebyi")
 
-[node name="background" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="." unique_id=278493725]
 texture = ExtResource("2_uebyi")
 centered = false
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1657915930]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 mouse_filter = 2
 
-[node name="Panel" type="Panel" parent="CenterContainer"]
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1274880990]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel" unique_id=969607165]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_1ris8")
 
-[node name="Label" type="Label" parent="CenterContainer/Panel"]
+[node name="Label" type="Label" parent="CenterContainer/Panel" unique_id=1640209206]
 clip_contents = true
 custom_minimum_size = Vector2(19, 23)
 layout_mode = 0
@@ -40,11 +40,12 @@ offset_top = 2.0
 offset_right = 30.0
 offset_bottom = 25.0
 scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0.82606, 0.82606006, 0.82606, 1)
 theme_override_fonts/font = ExtResource("3_fsjip")
 text = "99"
 horizontal_alignment = 2
 
-[node name="ItemButton" type="TextureButton" parent="CenterContainer/Panel"]
+[node name="ItemButton" type="TextureButton" parent="CenterContainer/Panel" unique_id=56322712]
 layout_mode = 1
 offset_left = -8.0
 offset_top = -8.0
@@ -53,20 +54,20 @@ offset_bottom = 8.0
 mouse_filter = 1
 mouse_behavior_recursive = 2
 
-[node name="przycisk" type="Node2D" parent="."]
+[node name="przycisk" type="Node2D" parent="." unique_id=378466497]
 visible = false
 z_index = 5
 position = Vector2(7, 5)
 scale = Vector2(0.5, 0.5)
 
-[node name="background" type="Sprite2D" parent="przycisk"]
+[node name="background" type="Sprite2D" parent="przycisk" unique_id=994286938]
 position = Vector2(16, 14.000001)
 scale = Vector2(2.1875, 0.6875)
 texture = ExtResource("2_uebyi")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="przycisk"]
+[node name="Label" type="Label" parent="przycisk" unique_id=1872108090]
 offset_left = 18.0
 offset_top = 16.0
 offset_right = 50.0
@@ -75,7 +76,7 @@ theme_override_fonts/font = ExtResource("3_fsjip")
 theme_override_font_sizes/font_size = 8
 text = "DROP"
 
-[node name="DropButton" type="TextureButton" parent="przycisk"]
+[node name="DropButton" type="TextureButton" parent="przycisk" unique_id=1207935743]
 offset_left = 14.0
 offset_top = 12.0
 offset_right = 56.0
