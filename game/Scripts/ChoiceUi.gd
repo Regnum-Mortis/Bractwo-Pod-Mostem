@@ -21,8 +21,8 @@ func _ready():
 
 func show_options(ids: Array, items: Dictionary):
 	_ids = ids.duplicate()
-	visible = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	visible = true
 	
 	option1.text = _get_label(0, items)
 	option2.text = _get_label(1, items)
