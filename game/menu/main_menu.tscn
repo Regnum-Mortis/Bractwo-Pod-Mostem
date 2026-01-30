@@ -1,14 +1,10 @@
 [gd_scene format=3 uid="uid://bjxxrcwxxi54m"]
 
 [ext_resource type="Script" uid="uid://kee165voj0s1" path="res://menu/main_menu.gd" id="1_f5okj"]
+[ext_resource type="Texture2D" uid="uid://deflp411u35cu" path="res://Art/game_art/menu_background.png" id="2_1x3cv"]
 [ext_resource type="PackedScene" uid="uid://bq2mhbvft4cxx" path="res://menu/options_menu.tscn" id="2_o5w3e"]
-
-[sub_resource type="Gradient" id="Gradient_lak45"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_n4o47"]
-gradient = SubResource("Gradient_lak45")
-fill_from = Vector2(0.10280374, 0.8831776)
-fill_to = Vector2(0.90654206, 0.042056076)
+[ext_resource type="Texture2D" uid="uid://34y1vypwm5ry" path="res://Art/game_art/logo.png" id="3_1x3cv"]
+[ext_resource type="FontFile" uid="uid://bmkc5lpneuknr" path="res://Fonts/PressStart2P-Regular.ttf" id="4_jc45y"]
 
 [node name="MainManu" type="Control" unique_id=741715997]
 layout_mode = 3
@@ -36,7 +32,7 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_n4o47")
+texture = ExtResource("2_1x3cv")
 
 [node name="MainManuButtons" type="VBoxContainer" parent="." unique_id=1957654775]
 layout_mode = 1
@@ -52,16 +48,24 @@ offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="MainManuButtons" unique_id=1866783008]
+layout_mode = 2
+texture = ExtResource("3_1x3cv")
+
 [node name="StartButton" type="Button" parent="MainManuButtons" unique_id=960595810]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_jc45y")
+theme_override_font_sizes/font_size = 16
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="MainManuButtons" unique_id=874474772]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_jc45y")
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="MainManuButtons" unique_id=1958571419]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_jc45y")
 text = "Quit"
 
 [node name="OptionsMenu" parent="." unique_id=905040266 instance=ExtResource("2_o5w3e")]
