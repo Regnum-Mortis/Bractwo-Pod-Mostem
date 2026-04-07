@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bjxxrcwxxi54m"]
+[gd_scene load_steps=6 format=3 uid="uid://bjxxrcwxxi54m"]
 
 [ext_resource type="Script" uid="uid://kee165voj0s1" path="res://menu/main_menu.gd" id="1_f5okj"]
 [ext_resource type="Texture2D" uid="uid://deflp411u35cu" path="res://Art/game_art/menu_background.png" id="2_1x3cv"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://34y1vypwm5ry" path="res://Art/game_art/logo.png" id="3_1x3cv"]
 [ext_resource type="FontFile" uid="uid://bmkc5lpneuknr" path="res://Fonts/PressStart2P-Regular.ttf" id="4_jc45y"]
 
-[node name="MainManu" type="Control" unique_id=741715997]
+[node name="MainManu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -21,7 +21,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_f5okj")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1497824617]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_1x3cv")
 
-[node name="MainManuButtons" type="VBoxContainer" parent="." unique_id=1957654775]
+[node name="MainManuButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,27 +48,27 @@ offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="MainManuButtons" unique_id=1866783008]
+[node name="TextureRect" type="TextureRect" parent="MainManuButtons"]
 layout_mode = 2
 texture = ExtResource("3_1x3cv")
 
-[node name="StartButton" type="Button" parent="MainManuButtons" unique_id=960595810]
+[node name="StartButton" type="Button" parent="MainManuButtons"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_jc45y")
 theme_override_font_sizes/font_size = 16
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="MainManuButtons" unique_id=874474772]
+[node name="OptionsButton" type="Button" parent="MainManuButtons"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_jc45y")
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="MainManuButtons" unique_id=1958571419]
+[node name="QuitButton" type="Button" parent="MainManuButtons"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_jc45y")
 text = "Quit"
 
-[node name="OptionsMenu" parent="." unique_id=905040266 instance=ExtResource("2_o5w3e")]
+[node name="OptionsMenu" parent="." instance=ExtResource("2_o5w3e")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
