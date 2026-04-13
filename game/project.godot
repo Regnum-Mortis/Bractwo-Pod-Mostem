@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SettingsManager="*res://menu/settings_manager.gd"
+TransitionToCombat="*uid://xc3s6a5lkqdv"
 
 [display]
 
@@ -121,6 +122,8 @@ qte_right={
 2d_physics/layer_1="World"
 2d_physics/layer_2="Interactions"
 2d_physics/layer_3="Player"
+2d_physics/layer_6="Enemy"
+2d_physics/layer_7="EnemyDetection"
 
 [rendering]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl22i0rmu3guf"]
+[gd_scene format=3 uid="uid://bl22i0rmu3guf"]
 
 [ext_resource type="Script" uid="uid://j0eknq61j2ku" path="res://Scripts/Player.gd" id="1_mqoqv"]
 [ext_resource type="Resource" uid="uid://csd5dgnn2qenj" path="res://inventory/player_inventory.tres" id="2_87pht"]
@@ -7,23 +7,24 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qq6ry"]
 size = Vector2(27, 26)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1415102829 groups=["player"]]
 collision_layer = 4
+collision_mask = 65
 script = ExtResource("1_mqoqv")
 inventory = ExtResource("2_87pht")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=88765964]
 texture = ExtResource("2_v2ckw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1098931319]
 position = Vector2(0.5, 7)
 shape = SubResource("RectangleShape2D_qq6ry")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1517190605]
 zoom = Vector2(1.5, 1.5)
 position_smoothing_speed = 8.0
 
-[node name="HungerTimer" type="Timer" parent="."]
+[node name="HungerTimer" type="Timer" parent="." unique_id=1013036178]
 autostart = true
 
 [connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]

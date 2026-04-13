@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://qbpuxrggh0ru"]
+
+[ext_resource type="FontFile" uid="uid://bmkc5lpneuknr" path="res://Fonts/PressStart2P-Regular.ttf" id="1_km8rb"]
+[ext_resource type="Script" uid="uid://cus845as62das" path="res://Scripts/World/DayAndNight/day_and_night.gd" id="1_lwk6a"]
+
+[node name="Brightness" type="CanvasLayer" unique_id=1169836517]
+script = ExtResource("1_lwk6a")
+
+[node name="Control" type="Control" parent="." unique_id=263046566]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1169.0
+offset_top = 36.0
+offset_right = 1209.0
+offset_bottom = 76.0
+
+[node name="TimeLabel" type="Label" parent="Control" unique_id=1629882961]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -10.0
+offset_right = 88.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("1_km8rb")
+theme_override_font_sizes/font_size = 24
+text = "16:40"
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1864027267]
+z_index = -2
+color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+blend_mode = 1

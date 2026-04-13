@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://xc3s6a5lkqdv"]
+
+[ext_resource type="Script" uid="uid://c6j61dq1eai6j" path="res://Scenes/Globals/transition_to_combat.gd" id="1_tdnyk"]
+[ext_resource type="Shader" uid="uid://deqpa5jjrenyh" path="res://Shaders/TransitionToCombat.gdshader" id="2_mo20e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yt5jo"]
+shader = ExtResource("2_mo20e")
+shader_parameter/radius = 1.0
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/aspect = Vector2(1.777, 1)
+
+[node name="TransitionToCombat" type="CanvasLayer" unique_id=483228378]
+script = ExtResource("1_tdnyk")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=2105122402]
+material = SubResource("ShaderMaterial_yt5jo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

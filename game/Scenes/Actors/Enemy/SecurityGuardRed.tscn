@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ttdfyg248deq"]
+
+[ext_resource type="PackedScene" uid="uid://7g2gp6xlf4gy" path="res://Scenes/Actors/Enemy/agressive_enemy.tscn" id="1_ik2f6"]
+[ext_resource type="Texture2D" uid="uid://b10uvsanjjetk" path="res://Art/npc.png" id="2_6cdk3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6cdk3"]
+radius = 18.0
+height = 52.0
+
+[node name="AgressiveEnemy" unique_id=1901419861 instance=ExtResource("1_ik2f6")]
+enemy_type = 0
+enemy_name = "Chuligán"
+move_speed = 200.0
+detection_range = 150.0
+attack_range = 30.0
+health = 100.0
+weapon = ""
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1" unique_id=342699463]
+texture = ExtResource("2_6cdk3")
+
+[node name="Collision" parent="." index="2" unique_id=1074952839]
+shape = SubResource("CapsuleShape2D_6cdk3")
+
+[node name="PlayerDetectonArea" parent="PlayerDetection" parent_id_path=PackedInt32Array(1348865185) index="0" unique_id=106677390]
+position = Vector2(-14, 1)
+polygon = PackedVector2Array(20, 25, 148, 89, 148, -86, 19, -25)

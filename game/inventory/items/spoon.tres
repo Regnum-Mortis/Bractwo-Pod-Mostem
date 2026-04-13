@@ -7,3 +7,4 @@
 script = ExtResource("1_w13o8")
 name = "spoon"
 texture = ExtResource("2_w13o8")
+item_type = "junk"

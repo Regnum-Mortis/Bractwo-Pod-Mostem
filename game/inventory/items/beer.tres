@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dhixgo02vlhcw"]
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://dhixgo02vlhcw"]
 
 [ext_resource type="Script" uid="uid://dvvhe74se253k" path="res://inventory/inventory_item.gd" id="1_as65q"]
 [ext_resource type="Texture2D" uid="uid://10kq6w7f5oqr" path="res://Art/beer2.png" id="2_as65q"]
@@ -8,3 +8,5 @@ script = ExtResource("1_as65q")
 name = "beer"
 texture = ExtResource("2_as65q")
 consumable = true
+item_type = "food"
+hunger_restore = 20.0

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://7g2gp6xlf4gy"]
+
+[ext_resource type="Script" uid="uid://oliircckoayo" path="res://Scripts/Enemy/agressive_enemy.gd" id="1_kaelp"]
+
+[node name="AgressiveEnemy" type="CharacterBody2D" unique_id=1901419861]
+collision_layer = 32
+script = ExtResource("1_kaelp")
+enemy_type = null
+enemy_name = null
+move_speed = null
+detection_range = null
+attack_range = null
+health = null
+weapon = null
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=381888034]
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1074952839]
+
+[node name="PlayerDetection" type="Area2D" parent="." unique_id=1348865185]
+collision_layer = 64
+collision_mask = 4
+
+[node name="PlayerDetectonArea" type="CollisionPolygon2D" parent="PlayerDetection" unique_id=106677390]
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://dblighifhe0k3" path="res://Art/inventory_art/item_slot.png" id="2_uebyi"]
 [ext_resource type="Texture2D" uid="uid://10kq6w7f5oqr" path="res://Art/beer2.png" id="3_1ris8"]
 [ext_resource type="FontFile" uid="uid://bmkc5lpneuknr" path="res://Fonts/PressStart2P-Regular.ttf" id="3_fsjip"]
+[ext_resource type="Texture2D" uid="uid://cier3igr5sy2v" path="res://Art/inventory_art/inventory-slot_old.png" id="5_n86j7"]
 
 [node name="inventory_ui_slot" type="Panel" unique_id=1079294789]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(16, 16)
 offset_right = 16.0
 offset_bottom = 16.0
+mouse_filter = 1
 script = ExtResource("1_uebyi")
 
 [node name="background" type="Sprite2D" parent="." unique_id=278493725]
@@ -45,7 +47,7 @@ theme_override_fonts/font = ExtResource("3_fsjip")
 text = "99"
 horizontal_alignment = 2
 
-[node name="ItemButton" type="TextureButton" parent="CenterContainer/Panel" unique_id=56322712]
+[node name="ItemButton" type="Button" parent="CenterContainer/Panel" unique_id=414371714]
 layout_mode = 1
 offset_left = -8.0
 offset_top = -8.0
@@ -53,34 +55,72 @@ offset_right = 8.0
 offset_bottom = 8.0
 mouse_filter = 1
 mouse_behavior_recursive = 2
+flat = true
 
-[node name="przycisk" type="Node2D" parent="." unique_id=378466497]
+[node name="przycisk" type="Control" parent="." unique_id=2056356747]
 visible = false
 z_index = 5
-position = Vector2(7, 5)
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 14.0
+offset_right = 8.0
+offset_bottom = 14.0
 scale = Vector2(0.5, 0.5)
 
-[node name="background" type="Sprite2D" parent="przycisk" unique_id=994286938]
-position = Vector2(16, 14.000001)
-scale = Vector2(2.1875, 0.6875)
-texture = ExtResource("2_uebyi")
-centered = false
-metadata/_edit_lock_ = true
+[node name="dropButton" type="Control" parent="przycisk" unique_id=1979515604]
+anchors_preset = 0
 
-[node name="Label" type="Label" parent="przycisk" unique_id=1872108090]
+[node name="background" type="Sprite2D" parent="przycisk/dropButton" unique_id=994286938]
+position = Vector2(14, -2)
+scale = Vector2(2.375, 0.75)
+texture = ExtResource("5_n86j7")
+centered = false
+
+[node name="Label" type="Label" parent="przycisk/dropButton" unique_id=1872108090]
+layout_mode = 0
 offset_left = 18.0
-offset_top = 16.0
 offset_right = 50.0
-offset_bottom = 24.0
+offset_bottom = 8.0
 theme_override_fonts/font = ExtResource("3_fsjip")
 theme_override_font_sizes/font_size = 8
 text = "DROP"
 
-[node name="DropButton" type="TextureButton" parent="przycisk" unique_id=1207935743]
+[node name="DropButton" type="Button" parent="przycisk/dropButton" unique_id=1941148679]
+layout_mode = 0
+offset_left = 14.0
+offset_top = -2.0
+offset_right = 52.0
+offset_bottom = 10.0
+flat = true
+
+[node name="useButton" type="Control" parent="przycisk" unique_id=2039546617]
+anchors_preset = 0
+
+[node name="background2" type="Sprite2D" parent="przycisk/useButton" unique_id=1390388114]
+position = Vector2(14, 12)
+scale = Vector2(2.375, 0.75)
+texture = ExtResource("5_n86j7")
+centered = false
+
+[node name="UseLabel" type="Label" parent="przycisk/useButton" unique_id=43043863]
+z_index = 1
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 44.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("3_fsjip")
+theme_override_font_sizes/font_size = 8
+text = "USE"
+
+[node name="UseButton" type="Button" parent="przycisk/useButton" unique_id=272745334]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 12.0
-offset_right = 56.0
-offset_bottom = 30.0
+offset_right = 52.0
+offset_bottom = 24.0
+flat = true
 
 [connection signal="pressed" from="CenterContainer/Panel/ItemButton" to="." method="_on_item_button_pressed"]
-[connection signal="pressed" from="przycisk/DropButton" to="." method="_on_drop_button_pressed"]
+[connection signal="pressed" from="przycisk/dropButton/DropButton" to="." method="_on_drop_button_pressed"]
+[connection signal="pressed" from="przycisk/useButton/UseButton" to="." method="_on_use_button_pressed"]

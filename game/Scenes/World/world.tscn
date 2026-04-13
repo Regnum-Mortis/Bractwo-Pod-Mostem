@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://ufw422vmqhys" path="res://Scenes/Ui/DialogUI.gd" id="5_7staa"]
 [ext_resource type="PackedScene" uid="uid://c0d3p0qdvkowy" path="res://menu/pause_menu/pause_menu.tscn" id="7_ugf0j"]
 [ext_resource type="PackedScene" uid="uid://prvnkp8swxfc" path="res://Scenes/Actors/npc.tscn" id="8_fcotr"]
+[ext_resource type="PackedScene" uid="uid://qbpuxrggh0ru" path="res://Scenes/World/DayAndNight.tscn" id="9_pvt60"]
+[ext_resource type="PackedScene" uid="uid://ttdfyg248deq" path="res://Scenes/Actors/Enemy/SecurityGuardRed.tscn" id="13_vbhkl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0d6x"]
 texture = ExtResource("1_y0d6x")
@@ -95,9 +97,11 @@ y_sort_enabled = true
 [node name="UI_Player" type="CanvasLayer" parent="YSortLayer" unique_id=1503250733]
 
 [node name="PauseMenu" parent="YSortLayer/UI_Player" unique_id=1082544863 node_paths=PackedStringArray("inventory_ui") instance=ExtResource("7_ugf0j")]
+visible = false
 inventory_ui = NodePath("../Inventory_UI")
 
 [node name="Inventory_UI" parent="YSortLayer/UI_Player" unique_id=1888943271 instance=ExtResource("4_0ph6x")]
+visible = false
 scale = Vector2(8, 8)
 pivot_offset = Vector2(64, 32)
 size_flags_horizontal = 4
@@ -112,6 +116,7 @@ offset_bottom = 36.0
 max_value = 500.0
 value = 500.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="HungerBar" type="ProgressBar" parent="YSortLayer/UI_Player" unique_id=1969505487]
 modulate = Color(0.866667, 0.803922, 0, 1)
@@ -122,14 +127,19 @@ offset_bottom = 64.0
 max_value = 300.0
 value = 300.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="SearchUI" parent="YSortLayer/UI_Player" unique_id=1711754426 instance=ExtResource("2_j18l1")]
 visible = false
 
 [node name="ChoiceUI" parent="YSortLayer/UI_Player" unique_id=160258464 instance=ExtResource("3_vvk83")]
+visible = false
 
 [node name="DialogUI" parent="YSortLayer/UI_Player" unique_id=1617535022 instance=ExtResource("4_adcqc")]
+visible = false
 script = ExtResource("5_7staa")
+
+[node name="Brightness" parent="YSortLayer/UI_Player" unique_id=1169836517 instance=ExtResource("9_pvt60")]
 
 [node name="TrashCan" parent="YSortLayer" unique_id=2126656506 instance=ExtResource("3_rdljx")]
 position = Vector2(-312, 70)
@@ -140,3 +150,6 @@ dialog_ui_path = NodePath("../UI_Player/DialogUI")
 
 [node name="Player" parent="YSortLayer" unique_id=1563542689 instance=ExtResource("3_dg2g4")]
 position = Vector2(-2, 12)
+
+[node name="AgressiveEnemy" parent="YSortLayer" unique_id=1901419861 instance=ExtResource("13_vbhkl")]
+position = Vector2(-641, -198)

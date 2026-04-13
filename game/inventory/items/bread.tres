@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dnc3w48rf0xhw"]
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://dnc3w48rf0xhw"]
 
 [ext_resource type="Script" uid="uid://dvvhe74se253k" path="res://inventory/inventory_item.gd" id="1_bfv5h"]
 [ext_resource type="Texture2D" uid="uid://7sutqkpqsdxy" path="res://Art/bread.png" id="2_ciwwd"]
@@ -8,3 +8,5 @@ script = ExtResource("1_bfv5h")
 name = "bread"
 texture = ExtResource("2_ciwwd")
 consumable = true
+item_type = "food"
+hunger_restore = 20.0

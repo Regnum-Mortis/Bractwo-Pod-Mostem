@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dryqisgwx1uon"]
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://dryqisgwx1uon"]
 
 [ext_resource type="Script" uid="uid://dvvhe74se253k" path="res://inventory/inventory_item.gd" id="1_nnr62"]
-[ext_resource type="Texture2D" uid="uid://cplhofcagdn1n" path="res://Art/junk.png" id="2_nnr62"]
+[ext_resource type="Texture2D" uid="uid://b3rxmmlmy4kl0" path="res://Art/junk.png" id="2_nnr62"]
 
 [resource]
 script = ExtResource("1_nnr62")
 name = "junk"
 texture = ExtResource("2_nnr62")
+item_type = "junk"
